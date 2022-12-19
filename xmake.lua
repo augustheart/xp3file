@@ -38,4 +38,8 @@ target("xp3file")
     set_kind("binary")
     add_packages("zlib","cli11","fmt")
     add_files("src/*.cpp")
+    add_ldflags("-static")
+    if(is_mode("release"))then
+        add_ldflags("-s") 
+    end
 target_end()
